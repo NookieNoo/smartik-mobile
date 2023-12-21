@@ -1,0 +1,78 @@
+{
+  "build": {
+    "production": {
+      "channel": "pro",
+      "cache": {
+        "disabled": true
+      }
+    },
+    "apk": {
+      "channel": "pro",
+      "cache": {
+        "disabled": true
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "development": {
+      "channel": "dev",
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "MYENV": "development"
+      }
+    },
+    "prerelease": {
+      "channel": "pre",
+      "distribution": "internal",
+      "env": {
+        "MYENV": "prerelease"
+      },
+      "ios": {
+        "buildConfiguration": "Release"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "testflight-dev": {
+      "channel": "testflight-dev",
+      "env": {
+        "MYENV": "prerelease"
+      },
+      "ios": {
+        "buildConfiguration": "Release"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "testflight": {
+      "channel": "testflight",
+      "env": {
+        "MYENV": "prerelease"
+      },
+      "ios": {
+        "buildConfiguration": "Release"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  },
+  "cli": {
+    "version": ">= 0.53.0",
+    "requireCommit": true
+  },
+  "submit": {
+    "production": {
+      "ios": {
+      }
+    },
+    "prerelease": {
+      "ios": {
+      }
+    }
+  }
+}

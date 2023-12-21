@@ -1,0 +1,158 @@
+{
+  "expo": {
+    "name": "Покупкин",
+    "slug": "smartik",
+    "version": "1.3.8",
+    "runtimeVersion": "16",
+    "updates": {
+      "url": "https://u.expo.dev/c8072acc-f017-482e-80d6-3eb77c8034e3"
+    },
+    "scheme": "smartik",
+    "owner": "pokupkin",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "notification": {
+      "icon": "./assets/android-statusbar-icon.png"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "developmentClient": {
+      "silentLaunch": false
+    },
+    "ios": {
+      "bundleIdentifier": "com.smartbuy.smartik",
+      "buildNumber": "67",
+      "supportsTablet": false,
+      "infoPlist": {
+        "CFBundleDevelopmentRegion": "ru_RU",
+        "NSCameraUsageDescription": "Это позволит вам считывать QR коды и штрихкоды.",
+        "NSLocationUsageDescription": "Это позволит вам проще заполнить адрес доставки.",
+        "NSLocationWhenInUseUsageDescription": "Это позволит вам проще заполнить адрес доставки.",
+        "LSApplicationQueriesSchemes": ["itms-apps"],
+        "UIBackgroundModes": ["fetch", "remote-notification"]
+      },
+      "associatedDomains": [
+        "applinks:app.smartik.me",
+        "applinks:smartik.onelink.me",
+        "applinks:pokupkin.onelink.me"
+      ],
+      "config": {
+      },
+      "googleServicesFile": "./google-services/ios.production.plist"
+    },
+    "android": {
+      "package": "com.smartbuy.smartik",
+      "permissions": ["RECEIVE_BOOT_COMPLETED", "POST_NOTIFICATIONS"],
+      "versionCode": 16,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundImage": "./assets/adaptive-background.png"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": ""
+        }
+      },
+      "googleServicesFile": "./google-services/android.production.json",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "https",
+              "host": "smartik.onelink.me",
+              "pathPrefix": "/KzYq"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "https",
+              "host": "pokupkin.onelink.me",
+              "pathPrefix": "/ptNX"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "https",
+              "host": "app.smartik.me",
+              "pathPrefix": "/marketing"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "smartik"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "pokupkin"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c8072acc-f017-482e-80d6-3eb77c8034e3"
+      }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "zotoff",
+            "project": "react-native",
+            "authToken": ""
+          }
+        }
+      ]
+    },
+    "plugins": [
+      "sentry-expo",
+      "@react-native-firebase/app",
+      "@react-native-firebase/crashlytics",
+      "@notifee/react-native",
+      "./withReactNativeMaps",
+      [
+        "react-native-appsflyer",
+        {
+          "shouldUseStrictMode": false
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          },
+          "android": {
+            "compileSdkVersion": 33
+          }
+        }
+      ]
+    ]
+  }
+}
